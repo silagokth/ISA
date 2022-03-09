@@ -19,6 +19,9 @@ def main():
     isa = InstructionSetArchitecture(isa_file, schema_file).get()
 
     template = '''
+!!! Note
+    Instruction fields marked by bold font are controllable and observable. Users can modify these fields in Manas input file.
+
 {%- for i in instruction_templates %}
 
 ### {{i.name}}
@@ -28,7 +31,7 @@ Field | Position | Width | Default Value | Description
 instr_code | [{{i.max_chunk*instr_bitwidth - 1}}, {{i.max_chunk*instr_bitwidth - instr_code_bitwidth}}] | {{instr_code_bitwidth}} | {{i.code}} | Instruction code for {{i.name}}
 {%- set ns=namespace(index=i.max_chunk*instr_bitwidth - instr_code_bitwidth) -%}
 {%- for j in i.segment_templates %}
-{{j.name}} | [{{ns.index - 1 }}, {{ns.index - j.bitwidth}}] | {{j.bitwidth}} | {{j.default_val}} | {{j.comment}} {%- if j.verbo_map -%}{% for k in j.verbo_map %} [{{k.key}}]:{{k.val}};{% endfor %}{%- endif -%}
+{% if j.controllable and j.observable -%}**{{j.name}}**{%- else -%}{{j.name}}{%- endif %} | [{{ns.index - 1 }}, {{ns.index - j.bitwidth}}] | {{j.bitwidth}} | {{j.default_val}} | {{j.comment}} {%- if j.verbo_map -%}{% for k in j.verbo_map %} [{{k.key}}]:{{k.val}};{% endfor %}{%- endif -%}
 {%- set ns.index = ns.index - j.bitwidth -%}
 {%- endfor -%}
 {%- endfor -%}
