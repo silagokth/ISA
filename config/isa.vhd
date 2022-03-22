@@ -92,6 +92,7 @@ PACKAGE isa_package IS
         iter : STD_LOGIC_VECTOR(6 - 1 DOWNTO 0);
         step_sd : STD_LOGIC;
         step : STD_LOGIC_VECTOR(6 - 1 DOWNTO 0);
+        link : STD_LOGIC_VECTOR(4 - 1 DOWNTO 0);
     END RECORD;
     TYPE RACCU_instr_type IS RECORD
         instr_code : STD_LOGIC_VECTOR(4 - 1 DOWNTO 0);
@@ -308,6 +309,7 @@ PACKAGE BODY isa_package IS
         result.iter := arg(5 DOWNTO 0);
         result.step_sd := '0';
         result.step := std_logic_vector(to_unsigned(1, 6));
+        result.link := std_logic_vector(to_unsigned(0, 4));
         RETURN result;
     END;
     FUNCTION unpack_LOOP2_record(arg : std_logic_vector(54 - 1 DOWNTO 0)) RETURN LOOP_instr_type IS
@@ -323,6 +325,7 @@ PACKAGE BODY isa_package IS
         result.iter := arg(32 DOWNTO 27);
         result.step_sd := arg(26);
         result.step := arg(25 DOWNTO 20);
+        result.link := arg(19 DOWNTO 16);
         RETURN result;
     END;
     

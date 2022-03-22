@@ -136,7 +136,7 @@
         },
         {
           "name": "l2_iter",
-          "comment": "The level-2 iteration.",
+          "comment": "The level-2 iteration - 1.",
           "bitwidth": 5
         },
         {
@@ -456,6 +456,12 @@
           "comment": "The iteration step.",
           "bitwidth": 6,
           "default_val": 1
+        },
+        {
+          "name": "link",
+          "comment": "The loops that have the same endpc will be linked together. This field is 1-hot encoded.",
+          "bitwidth": 4,
+          "controllable": false
         }
       ]
     },
@@ -550,7 +556,7 @@
         },
         {
           "name": "horizontal_hops",
-          "comment": "The horizontal hops - 1.",
+          "comment": "The horizontal hops.",
           "bitwidth": 3
         },
         {
@@ -564,7 +570,7 @@
         },
         {
           "name": "vertical_hops",
-          "comment": "The vertical hops - 1",
+          "comment": "The vertical hops.",
           "bitwidth": 3
         },
         {
@@ -611,7 +617,7 @@
         },
         {
           "name": "l1_iter",
-          "comment": "level-1 iteration",
+          "comment": "level-1 iteration - 1.",
           "bitwidth": 7
         },
         {
@@ -628,7 +634,7 @@
         },
         {
           "name": "l2_iter",
-          "comment": "level-2 iteration",
+          "comment": "level-2 iteration - 1.",
           "bitwidth": 7
         },
         {
