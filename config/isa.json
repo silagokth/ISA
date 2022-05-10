@@ -13,7 +13,7 @@
     {
       "code": 1,
       "name": "REFI",
-      "phase": 3,
+      "phase": 4,
       "max_chunk": 3,
       "segment_templates": [
         {
@@ -224,7 +224,7 @@
     {
       "code": 4,
       "name": "DPU",
-      "phase": 3,
+      "phase": 4,
       "max_chunk": 1,
       "segment_templates": [
         {
@@ -308,7 +308,7 @@
     {
       "code": 5,
       "name": "SWB",
-      "phase": 2,
+      "phase": 3,
       "max_chunk": 1,
       "segment_templates": [
         {
@@ -469,7 +469,7 @@
     {
       "code": 10,
       "name": "RACCU",
-      "phase": 1,
+      "phase": 2,
       "max_chunk": 1,
       "segment_templates": [
         {
@@ -543,7 +543,7 @@
     {
       "code": 12,
       "name": "ROUTE",
-      "phase": 2,
+      "phase": 3,
       "max_chunk": 1,
       "segment_templates": [
         {
@@ -593,7 +593,7 @@
     {
       "code": 13,
       "name": "SRAM",
-      "phase": 4,
+      "phase": 5,
       "max_chunk": 3,
       "segment_templates": [
         {
