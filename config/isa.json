@@ -348,8 +348,8 @@
           "comment": "Flag of whether src and dest row are equal.",
           "bitwidth": 1,
           "verbo_map": [
-            { "key": 0, "val": "y" },
-            { "key": 1, "val": "n" }
+            { "key": 0, "val": "n" },
+            { "key": 1, "val": "y" }
           ]
         },
         {
